@@ -5,7 +5,7 @@
  * Description: A lightweight SEO plugin for WordPress.
  * Author:      eLightUp
  * Author URI:  https://elightup.com
- * Version:     1.1.0
+ * Version:     1.3.1
  * Text Domain: slim-seo
  * Domain Path: /languages
  */
@@ -24,7 +24,10 @@ new SlimSEO\MetaTags\Twitter();
 new SlimSEO\Sitemaps\Manager();
 new SlimSEO\ImagesAlt();
 new SlimSEO\MetaBox();
+new SlimSEO\Breadcrumbs();
 if ( ! is_admin() ) {
 	new SlimSEO\MetaTags\Robots();
     new SlimSEO\AttachmentRedirect();
 }
+
+load_plugin_textdomain( 'slim-seo', false, basename( __DIR__ ) . '/languages/' );
